@@ -1,1 +1,15 @@
 
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.13
+  build:
+    commands:
+      - echo "Packaging Lambda function..."
+      - zip -r lambda_function.zip script.py  # Directly zip the script.py file
+
+artifacts:
+  files:
+    - lambda_function.zip   # This is the packaged Lambda zip file
